@@ -1,8 +1,8 @@
 var selectedCityName = "";
-let input = $("#cityName")
+let input = $("#cityName");
 input.keyup(function() {
   let textToSearch = input.val();
-  inputChanged(textToSearch)
+  inputChanged(textToSearch);
 });
 
 class CityItemComponent {
@@ -14,11 +14,13 @@ class CityItemComponent {
   createElement() {
     this.element = $(`
         <div>
+        <div class= "li-item">
           <span class="spn-name">${this.city.title}</span>          
+        </div>
         </div>
       `);
 
-    let itemSelected = this.element.find(".spn-name");
+    let itemSelected = this.element.find(".li-item");
     itemSelected.on("click", () => {
       liElementCliced(this.city.woeid);
       selectedCityName = this.city.title;
@@ -67,7 +69,7 @@ class ItemComponent {
     this.listItem = listItem;
     this.abbr = listItem.weather_state_abbr;
     this.icoUrl =
-      "https://www.metaweather.com/static/img/weather/" + this.abbr + ".svg";
+      "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/static/img/weather/" + this.abbr + ".svg";
     this.createElement();
   }
 
@@ -78,8 +80,8 @@ class ItemComponent {
           <span class="spn-name"> ${this.listItem.applicable_date}</span>
           </p> 
           <img class="weather-icon" src=${this.icoUrl} alt=${
-            this.listItem.weather_state_abbr
-          }> 
+      this.listItem.weather_state_abbr
+    }> 
           <p class="spn-name">  TEMP:  ${this.listItem.the_temp}c</p>
           <p class="spn-name"> HUMIDETY: ${this.listItem.humidity}%</p>
          
@@ -91,24 +93,24 @@ class ItemComponent {
   }
 }
 
-function inputChanged(textToSearch){
-  $.get("https://www.metaweather.com/api/location/search/?query=" + textToSearch, function(
-  response
-) {
-  let div = $(".select-section")
-  emptyElement(div)
-  let comp = new CitiesListComponent(response);
-  $(".select-section").append(comp.element);
-});
+function inputChanged(textToSearch) {
+  $.get(
+    "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=" + textToSearch,
+    function(response) {
+      let div = $(".select-section");
+      emptyElement(div);
+      let comp = new CitiesListComponent(response);
+      $(".select-section").append(comp.element);
+    }
+  );
 }
-
 
 function liElementCliced(woeidCity) {
   getDataByQuery(woeidCity);
 }
 
 function getDataByQuery(QueryParams) {
-  $.get("https://www.metaweather.com/api/location/" + QueryParams, function(
+  $.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/" + QueryParams, function(
     response
   ) {
     console.log(response.consolidated_weather);
@@ -129,6 +131,6 @@ function renderList(data) {
   $(".select-section").append(comp.element);
 }
 function getIconSrcByKey(key) {
-  let src = "https://www.metaweather.com/static/img/weather/" + key + ".svg";
+  let src = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/static/img/weather/" + key + ".svg";
   return src;
 }
