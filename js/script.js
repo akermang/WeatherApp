@@ -87,7 +87,7 @@ class ItemComponent {
   constructor(listItem) {
     this.listItem = listItem;
     this.abbr = listItem.weather_state_abbr;
-    this.icoUrl = url + "static/img/weather/" + this.abbr + ".svg";
+    this.icoUrl =  "https://www.metaweather.com/static/img/weather/" + this.abbr + ".svg";
     this.createElement();
   }
 
