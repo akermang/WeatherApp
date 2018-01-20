@@ -1,4 +1,6 @@
-var selectedCityName = "";
+let selectedCityName = "";
+const url = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/";
+
 let input = $("#cityName");
 input.keyup(function() {
   let textToSearch = input.val();
@@ -33,20 +35,14 @@ function liElementCliced(woeidCity) {
 }
 
 function getDataByQuery(QueryParams) {
-  $.get(
-    "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/" +
-      QueryParams,
-    function(response) {
-      renderList(response.consolidated_weather);
-    }
-  );
+  $.get(url + "api/location/" + QueryParams, function(response) {
+    renderList(response.consolidated_weather);
+  });
 }
 
 function renderList(data) {
   let citiesList = $(".select-section");
   emptyElement(citiesList);
-  // let comp = new UsersListComponent(data);
-  // $(".select-section").append(comp.element);
   let comp = new ForcastListComponent(data);
   $(".select-section").append(comp.element);
 }
@@ -91,10 +87,7 @@ class ItemComponent {
   constructor(listItem) {
     this.listItem = listItem;
     this.abbr = listItem.weather_state_abbr;
-    this.icoUrl =
-      "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/static/img/weather/" +
-      this.abbr +
-      ".svg";
+    this.icoUrl = url + "static/img/weather/" + this.abbr + ".svg";
     this.createElement();
   }
 
@@ -120,16 +113,12 @@ class ItemComponent {
 }
 
 function inputChanged(textToSearch) {
-  $.get(
-    "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=" +
-      textToSearch,
-    function(response) {
-      let div = $(".select-section");
-      emptyElement(div);
-      let comp = new CitiesListComponent(response);
-      $(".select-section").append(comp.element);
-    }
-  );
+  $.get(url + "api/location/search/?query=" + textToSearch, function(response) {
+    let div = $(".select-section");
+    emptyElement(div);
+    let comp = new CitiesListComponent(response);
+    $(".select-section").append(comp.element);
+  });
 }
 
 function emptyElement(element) {
@@ -137,9 +126,6 @@ function emptyElement(element) {
 }
 
 function getIconSrcByKey(key) {
-  let src =
-    "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/static/img/weather/" +
-    key +
-    ".svg";
+  let src = url + "static/img/weather/" + key + ".svg";
   return src;
 }
