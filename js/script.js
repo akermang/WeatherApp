@@ -113,7 +113,6 @@ function getDataByQuery(QueryParams) {
   $.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/" + QueryParams, function(
     response
   ) {
-    console.log(response.consolidated_weather);
     renderList(response.consolidated_weather);
   });
 }

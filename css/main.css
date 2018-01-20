@@ -8,19 +8,87 @@ main {
    License: none (public domain)
 */
 /* line 18, ../scss/base/_reset.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -31,35 +99,53 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset for older browsers */
 /* line 28, ../scss/base/_reset.scss */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 /* line 31, ../scss/base/_reset.scss */
-body, html {
+body,
+html {
   height: 100%;
 }
 
 /* line 34, ../scss/base/_reset.scss */
 body {
   line-height: 1;
+  background-image: url("http://albums.tapuz.co.il/mfhp-webbuilder/5/5/f/5/1420348091.jpg");
+  background-size: cover;
+  height: 100%;
+  color: antiquewhite;
 }
 
 /* line 37, ../scss/base/_reset.scss */
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
 /* line 40, ../scss/base/_reset.scss */
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
 /* line 44, ../scss/base/_reset.scss */
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
   content: none;
 }
 
@@ -68,49 +154,59 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-main{
+main {
   width: 80%;
   margin: 0 auto;
 }
 
-header{
+header {
   display: flex;
+  align-items: center;
   justify-content: center;
+  height: 50px;
+  font-size: 40px;
 }
 
-.input-section{
+.input-section {
   border-radius: 7px;
   background: rgb(81, 81, 122);
   color: white;
   min-height: 30px;
   padding: 5px;
-  margin : 5px;
+  margin: 5px;
 }
 
-.select-section{
+.input-section input {
+  border-radius: 4px;
+  background: rgb(211, 124, 219);
+  color: rgb(245, 245, 240);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.select-section {
   margin: 0 auto;
 }
- ul li{
+ul li {
   border-radius: 7px;
   background: rgb(81, 81, 122);
   color: white;
   min-height: 30px;
   padding: 5px;
-  margin : 5px;
+  margin: 5px;
 }
 
-ul li:hover{
+ul li:hover {
   background: rgb(45, 45, 73);
 }
 
-.item-comp-div{
+.item-comp-div {
   display: flex;
   flex-direction: column;
   height: 170px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
-
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.item-comp-div img{
+.item-comp-div img {
   height: 50%;
 }
