@@ -219,7 +219,7 @@ ul li:hover {
   flex-direction: column;
   height: 170px;
   width: 140px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px -3px 71px rgba(62, 100, 72, 0.33);
   overflow: hidden;
 }
 
