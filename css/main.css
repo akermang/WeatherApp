@@ -164,7 +164,7 @@ header {
   align-items: center;
   justify-content: center;
   height: 50px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .input-section {
@@ -240,3 +240,10 @@ ul li:hover {
 .item-comp-div img {
   height: 30%;
 }
+
+@media (max-width: 477px) {
+  .input-section input {
+    width: 100%;
+  }
+}
+
