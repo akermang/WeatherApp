@@ -72,8 +72,8 @@ class ForcastListComponent {
   }
 
   createElement() {
+    createHeader()
     this.element = $(`<ul class="forcast-ul"></ul>`);
-
     for (let listItem of this.forcastList) {
       let liEl = $("<li></li>");
       let itemComp = new ItemComponent(listItem);
@@ -81,6 +81,11 @@ class ForcastListComponent {
       this.element.append(liEl);
     }
   }
+}
+
+function createHeader(){
+  let citiyName = $(`<h3 class="city-name">${selectedCityName}</h3>`);
+    $(".select-section").append(citiyName)
 }
 
 class ItemComponent {

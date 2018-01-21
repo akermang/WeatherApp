@@ -181,11 +181,25 @@ header {
   background: rgb(211, 124, 219);
   color: rgb(245, 245, 240);
   font-weight: bold;
+  font-size: 1em;
   text-transform: uppercase;
+  border: 1px solid rgb(245, 245, 240);
+  outline-offset: 0;
+  height: 30px;
+}
+.input-section input:focus{
+  outline: none;
 }
 
 .select-section {
   margin: 0 auto;
+}
+
+h3.city-name{
+  margin: 5px auto;
+  text-align: center;
+  color: aliceblue;
+  font-size: 2em;
 }
 
 .select-section ul {
