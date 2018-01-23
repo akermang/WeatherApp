@@ -7,6 +7,33 @@ input.keyup(function() {
   inputChanged(textToSearch);
 });
 
+function inputChanged(textToSearch) {
+  $.get(url + "api/location/search/?query=" + textToSearch, function(response) {
+    let div = $(".select-section");
+    emptyElement(div);
+    let comp = new CitiesListComponent(response);
+    $(".select-section").append(comp.element);
+  });
+}
+
+class CitiesListComponent {
+  constructor(citiesList) {
+    this.citiesList = citiesList;
+    this.createElement();
+  }
+
+  createElement() {
+    this.element = $(`<ul></ul>`);
+
+    for (let user of this.citiesList) {
+      let liEl = $("<li></li>");
+      let userComp = new CityItemComponent(user);
+      liEl.append(userComp.element);
+      this.element.append(liEl);
+    }
+  }
+}
+
 class CityItemComponent {
   constructor(city) {
     this.city = city;
@@ -45,24 +72,6 @@ function renderList(data) {
   emptyElement(citiesList);
   let comp = new ForcastListComponent(data);
   $(".select-section").append(comp.element);
-}
-
-class CitiesListComponent {
-  constructor(citiesList) {
-    this.citiesList = citiesList;
-    this.createElement();
-  }
-
-  createElement() {
-    this.element = $(`<ul></ul>`);
-
-    for (let user of this.citiesList) {
-      let liEl = $("<li></li>");
-      let userComp = new CityItemComponent(user);
-      liEl.append(userComp.element);
-      this.element.append(liEl);
-    }
-  }
 }
 
 class ForcastListComponent {
@@ -115,15 +124,6 @@ class ItemComponent {
     let img = this.element.find(".weather-icon");
     img.src = getIconSrcByKey(this.listItem.weather_state_abbr);
   }
-}
-
-function inputChanged(textToSearch) {
-  $.get(url + "api/location/search/?query=" + textToSearch, function(response) {
-    let div = $(".select-section");
-    emptyElement(div);
-    let comp = new CitiesListComponent(response);
-    $(".select-section").append(comp.element);
-  });
 }
 
 function emptyElement(element) {
