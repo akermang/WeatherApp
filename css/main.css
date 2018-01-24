@@ -255,7 +255,14 @@ h3.city-name{
 @media (max-width: 1100px){
   .loader{
     top: 67px;
-    left: calc(40% - 25px);
+    left: calc(39.5% - 25px);
+  }
+}
+
+@media (max-width: 790px){
+  .loader{
+    top: 67px;
+    left: calc(50% - 25px);
   }
 }
 
@@ -266,7 +273,6 @@ h3.city-name{
 
   .loader{
     top: 82px;
-    left: calc(50% - 25px);
   }
 }
 
