@@ -1,5 +1,6 @@
 let selectedCityName = "";
 const url = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/";
+const icoUrl = "https://www.metaweather.com/static/img/weather/";
 
 let input = $("#cityName");
 input.keyup(function() {
@@ -81,7 +82,7 @@ class ForcastListComponent {
   }
 
   createElement() {
-    createHeader()
+    createHeader();
     this.element = $(`<ul class="forcast-ul"></ul>`);
     for (let listItem of this.forcastList) {
       let liEl = $("<li></li>");
@@ -92,16 +93,16 @@ class ForcastListComponent {
   }
 }
 
-function createHeader(){
+function createHeader() {
   let citiyName = $(`<h3 class="city-name">${selectedCityName}</h3>`);
-    $(".select-section").append(citiyName)
+  $(".select-section").append(citiyName);
 }
 
 class ItemComponent {
   constructor(listItem) {
     this.listItem = listItem;
     this.abbr = listItem.weather_state_abbr;
-    this.icoUrl =  "https://www.metaweather.com/static/img/weather/" + this.abbr + ".svg";
+    this.icoUrl = icoUrl + this.abbr + ".svg";
     this.createElement();
   }
 
@@ -111,26 +112,18 @@ class ItemComponent {
         <div class="item-comp-div">
           <p class="spn-name">${selectedCityName}  </p>
           <p class="spn-name"> ${this.listItem.applicable_date}</p>
-          
           <img class="weather-icon" src=${this.icoUrl} alt=${
-      this.listItem.weather_state_abbr
-    }> 
+             this.listItem.weather_state_abbr}> 
           <p class="spn-name">  TEMP:  ${temp}c</p>
           <p class="spn-name"> Humidety: ${this.listItem.humidity}%</p>
-         
         </div>
       `);
 
     let img = this.element.find(".weather-icon");
-    img.src = getIconSrcByKey(this.listItem.weather_state_abbr);
+    img.src = this.icoUrl;
   }
 }
 
 function emptyElement(element) {
   element.empty();
-}
-
-function getIconSrcByKey(key) {
-  let src = url + "static/img/weather/" + key + ".svg";
-  return src;
 }
