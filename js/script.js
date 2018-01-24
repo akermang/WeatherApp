@@ -1,7 +1,13 @@
-let selectedCityName = "";
-const url = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/";
+const url = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/";
 const icoUrl = "https://www.metaweather.com/static/img/weather/";
 let selectCont = $(".select-section");
+let selectedCityName = "";
+
+function getDataByQuery(QueryParams, callback) {
+  $.get(url + QueryParams, function(response) {
+    callback(response);
+  });
+}
 
 let input = $("#cityName");
 input.keyup(function() {
@@ -10,11 +16,13 @@ input.keyup(function() {
 });
 
 function inputChanged(textToSearch) {
-  $.get(url + "api/location/search/?query=" + textToSearch, function(response) {
+  let query = "search/?query=" + textToSearch;
+  
+  getDataByQuery(query, (response)=>{
     selectCont.empty();
     let comp = new CitiesListComponent(response);
     selectCont.append(comp.element);
-  });
+  })
 }
 
 class CitiesListComponent {
@@ -56,13 +64,8 @@ class CityItemComponent {
 }
 
 function liElementCliced(woeidCity) {
-  getDataByQuery(woeidCity);
-}
-
-function getDataByQuery(QueryParams) {
-  $.get(url + "api/location/" + QueryParams, function(response) {
-    renderList(response.consolidated_weather);
-  });
+  getDataByQuery(woeidCity,
+     (response)=> renderList(response.consolidated_weather));
 }
 
 function renderList(data) {
@@ -78,7 +81,7 @@ class ForcastListComponent {
   }
 
   createElement() {
-    createHeader();
+    createCityHeader();
     this.element = $(`<ul class="forcast-ul"></ul>`);
     for (let listItem of this.forcastList) {
       let itemComp = new ItemComponent(listItem);
@@ -87,7 +90,7 @@ class ForcastListComponent {
   }
 }
 
-function createHeader() {
+function createCityHeader() {
   let citiyName = $(`<h3 class="city-name">${selectedCityName}</h3>`);
   selectCont.append(citiyName);
 }
