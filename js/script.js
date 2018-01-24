@@ -26,10 +26,10 @@ class CitiesListComponent {
   createElement() {
     this.element = $(`<ul></ul>`);
 
-    for (let user of this.citiesList) {
-      let liEl = $("<li></li>");
-      let userComp = new CityItemComponent(user);
-      liEl.append(userComp.element);
+    for (let city of this.citiesList) {
+      let liEl = $("<li class='city-name'></li>");
+      let cityComp = new CityItemComponent(city);
+      liEl.append(cityComp.element);
       this.element.append(liEl);
     }
   }
@@ -50,7 +50,7 @@ class CityItemComponent {
         </div>
       `);
 
-    let itemSelected = this.element.find(".li-item");
+    let itemSelected = this.element;
     itemSelected.on("click", () => {
       liElementCliced(this.city.woeid);
       selectedCityName = this.city.title;
