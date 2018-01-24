@@ -1,6 +1,7 @@
 let selectedCityName = "";
 const url = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/";
 const icoUrl = "https://www.metaweather.com/static/img/weather/";
+let selectCont = $(".select-section");
 
 let input = $("#cityName");
 input.keyup(function() {
@@ -10,10 +11,9 @@ input.keyup(function() {
 
 function inputChanged(textToSearch) {
   $.get(url + "api/location/search/?query=" + textToSearch, function(response) {
-    let div = $(".select-section");
-    emptyElement(div);
+    selectCont.empty();
     let comp = new CitiesListComponent(response);
-    $(".select-section").append(comp.element);
+    selectCont.append(comp.element);
   });
 }
 
@@ -69,10 +69,9 @@ function getDataByQuery(QueryParams) {
 }
 
 function renderList(data) {
-  let citiesList = $(".select-section");
-  emptyElement(citiesList);
+  selectCont.empty();
   let comp = new ForcastListComponent(data);
-  $(".select-section").append(comp.element);
+  selectCont.append(comp.element);
 }
 
 class ForcastListComponent {
@@ -95,7 +94,7 @@ class ForcastListComponent {
 
 function createHeader() {
   let citiyName = $(`<h3 class="city-name">${selectedCityName}</h3>`);
-  $(".select-section").append(citiyName);
+  selectCont.append(citiyName);
 }
 
 class ItemComponent {
@@ -122,8 +121,4 @@ class ItemComponent {
     let img = this.element.find(".weather-icon");
     img.src = this.icoUrl;
   }
-}
-
-function emptyElement(element) {
-  element.empty();
 }
