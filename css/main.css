@@ -192,6 +192,15 @@ header {
   outline: none;
 }
 
+.loader{
+  width: 50px;
+  display: none;
+  color: red;
+  position: absolute;
+  top: 66px;
+  left: calc(28% - 20px)
+}
+
 .select-section {
   margin: 0 auto;
 }
@@ -243,9 +252,21 @@ h3.city-name{
   height: 30%;
 }
 
+@media (max-width: 1100px){
+  .loader{
+    top: 67px;
+    left: calc(40% - 25px);
+  }
+}
+
 @media (max-width: 477px) {
   .input-section input {
     width: 100%;
+  }
+
+  .loader{
+    top: 82px;
+    left: calc(50% - 25px);
   }
 }
 

@@ -2,10 +2,13 @@ const url = "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api
 const icoUrl = "https://www.metaweather.com/static/img/weather/";
 let selectCont = $(".select-section");
 let selectedCityName = "";
+const loader = $(".loader")
 
 function getDataByQuery(QueryParams, callback) {
+  loader.show();
   $.get(url + QueryParams, function(response) {
     callback(response);
+    loader.hide();
   });
 }
 
@@ -16,13 +19,16 @@ input.keyup(function() {
 });
 
 function inputChanged(textToSearch) {
-  let query = "search/?query=" + textToSearch;
-  
+  let letters = /^[a-zA-Z]/;
+  if(textToSearch.match(letters)){
+    let query = "search/?query=" + textToSearch;
+
   getDataByQuery(query, (response)=>{
     selectCont.empty();
     let comp = new CitiesListComponent(response);
     selectCont.append(comp.element);
   })
+  }
 }
 
 class CitiesListComponent {
