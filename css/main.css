@@ -187,6 +187,7 @@ header {
   outline-offset: 0;
   height: 30px;
 }
+
 .input-section input:focus{
   outline: none;
 }
@@ -208,7 +209,8 @@ h3.city-name{
   flex-wrap: wrap;
 }
 
-ul li {
+.item-comp-div,
+.li-item {
   border-radius: 7px;
   background: rgb(81, 81, 122);
   color: white;
@@ -217,7 +219,7 @@ ul li {
   margin: 5px;
 }
 
-ul li:hover {
+.li-item:hover {
   background: rgb(45, 45, 73);
 }
 

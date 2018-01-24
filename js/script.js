@@ -27,10 +27,8 @@ class CitiesListComponent {
     this.element = $(`<ul></ul>`);
 
     for (let city of this.citiesList) {
-      let liEl = $("<li class='city-name'></li>");
       let cityComp = new CityItemComponent(city);
-      liEl.append(cityComp.element);
-      this.element.append(liEl);
+      this.element.append(cityComp.element);
     }
   }
 }
@@ -50,8 +48,7 @@ class CityItemComponent {
         </div>
       `);
 
-    let itemSelected = this.element;
-    itemSelected.on("click", () => {
+    this.element.on("click", () => {
       liElementCliced(this.city.woeid);
       selectedCityName = this.city.title;
     });
@@ -84,10 +81,8 @@ class ForcastListComponent {
     createHeader();
     this.element = $(`<ul class="forcast-ul"></ul>`);
     for (let listItem of this.forcastList) {
-      let liEl = $("<li></li>");
       let itemComp = new ItemComponent(listItem);
-      liEl.append(itemComp.element);
-      this.element.append(liEl);
+      this.element.append(itemComp.element);
     }
   }
 }
