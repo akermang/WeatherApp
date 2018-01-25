@@ -63,9 +63,9 @@ class CityItemComponent {
   createElement() {
     this.element = $(`
         <div>
-          <div class= "li-item">
+          <button class= "li-item">
             <span class="spn-name">${this.city.title}</span>          
-          </div>
+          </button>
         </div>
       `);
 

@@ -225,8 +225,10 @@ h3.city-name{
   background: rgb(81, 81, 122);
   color: white;
   min-height: 30px;
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  margin: 8px;
+  border: none;
+  font-size: medium;
 }
 
 .li-item:hover {
