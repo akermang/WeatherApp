@@ -126,7 +126,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
-  color: antiquewhite;
+  color: rgb(243, 232, 217);
 }
 
 /* line 37, ../scss/base/_reset.scss */
@@ -265,14 +265,28 @@ h3.city-name{
 }
 
 @media (max-width: 790px){
+
+  main{
+    width: 85%;
+  }
+
   .message,
   .loader{
     top: 67px;
     left: calc(50% - 25px);
   }
+  .item-comp-div{
+    width: 110px;
+    margin: 5px;
+  }
 }
 
 @media (max-width: 477px) {
+
+  main{
+    width: 90%;
+  }
+
   .input-section input {
     width: 100%;
   }
@@ -280,6 +294,10 @@ h3.city-name{
   .message,
   .loader{
     top: 82px;
+  }
+
+  .item-comp-div{
+    width: 99px;
   }
 }
 
