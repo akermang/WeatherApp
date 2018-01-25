@@ -8,7 +8,7 @@ const message = $(".message")
 function getDataByQuery(QueryParams, callback) {
   loader.show();
   $.get(url + QueryParams, function(response) {
-    if(response.consolidated_weather  || response.length > 0){
+    if(response.constructor === {}.constructor  || response.length > 0){
       callback(response);
       loader.hide();
     }else {
