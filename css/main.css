@@ -192,6 +192,7 @@ header {
   outline: none;
 }
 
+.message,
 .loader{
   width: 50px;
   display: none;
@@ -253,6 +254,7 @@ h3.city-name{
 }
 
 @media (max-width: 1100px){
+  .message,
   .loader{
     top: 67px;
     left: calc(39.5% - 25px);
@@ -260,6 +262,7 @@ h3.city-name{
 }
 
 @media (max-width: 790px){
+  .message,
   .loader{
     top: 67px;
     left: calc(50% - 25px);
@@ -271,6 +274,7 @@ h3.city-name{
     width: 100%;
   }
 
+  .message,
   .loader{
     top: 82px;
   }
