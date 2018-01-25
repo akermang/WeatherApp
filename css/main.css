@@ -275,7 +275,7 @@ h3.city-name{
   .message,
   .loader{
     top: 67px;
-    left: calc(50% - 25px);
+    left: calc(50% - 40px);
   }
   .item-comp-div{
     width: 110px;
