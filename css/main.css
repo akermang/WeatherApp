@@ -124,6 +124,7 @@ body {
   line-height: 1;
   background-image: url("http://albums.tapuz.co.il/mfhp-webbuilder/5/5/f/5/1420348091.jpg");
   background-size: cover;
+  background-attachment: fixed;
   height: 100%;
   color: antiquewhite;
 }
