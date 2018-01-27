@@ -127,7 +127,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: rgb(243, 232, 217);
-  overflow: hidden;
 }
 
 /* line 37, ../scss/base/_reset.scss */
@@ -167,6 +166,12 @@ header {
   justify-content: center;
   height: 50px;
   font-size: 30px;
+}
+
+footer{
+  position: sticky;
+  bottom: 0;
+  background: blue;
 }
 
 .input-section {
