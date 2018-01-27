@@ -3,8 +3,7 @@ const icoUrl = "https://www.metaweather.com/static/img/weather/";
 let selectCont = $(".select-section");
 let selectedCityName = "";
 const loader = $(".loader");
-const message = $(".message")
-window.scrollTo(0,1);
+const message = $(".message");
 
 function getDataByQuery(QueryParams, callback) {
   loader.show();
