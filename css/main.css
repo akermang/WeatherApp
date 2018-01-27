@@ -264,13 +264,18 @@ h3.city-name {
     top: 67px;
     left: calc(39.5% - 37px);
   }
+
+  .select-section ul{
+    height: 440px;
+    overflow: auto;
+  }
 }
 
-@media (max-width: 790px) {
+@media (max-width: 800px) {
   main {
     width: 85%;
   }
-
+  
   .message,
   .loader {
     top: 67px;
@@ -282,7 +287,7 @@ h3.city-name {
   }
 }
 
-@media (max-width: 477px) {
+@media (max-width: 490px) {
   main {
     width: 90%;
   }
