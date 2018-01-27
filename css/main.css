@@ -162,6 +162,15 @@ main {
   margin: 0 auto;
 }
 
+.btn-top{
+  position: fixed;
+  bottom: 4px;
+  right: 3%;
+  background: blueviolet;
+  border-radius: 30%;
+  display: none;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -263,6 +272,10 @@ h3.city-name {
   .loader {
     top: 67px;
     left: calc(39.5% - 37px);
+  }
+
+  .btn-top{
+    display: block;
   }
 
   .select-section ul{

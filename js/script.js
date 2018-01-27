@@ -63,7 +63,7 @@ class CityItemComponent {
   createElement() {
     this.element = $(`
         <div>
-          <button class= "li-item">
+          <button class= "li-item scroll-item">
             <span class="spn-name">${this.city.title}</span>          
           </button>
         </div>
@@ -119,7 +119,7 @@ class ItemComponent {
   createElement() {
     let temp = Math.floor(this.listItem.the_temp);
     this.element = $(`
-        <div class="item-comp-div">
+        <div class="item-comp-div scroll-item">
           <p class="spn-name">${selectedCityName}  </p>
           <p class="spn-name"> ${this.listItem.applicable_date}</p>
           <img class="weather-icon" src=${this.icoUrl} alt=${
@@ -132,4 +132,9 @@ class ItemComponent {
     let img = this.element.find(".weather-icon");
     img.src = this.icoUrl;
   }
+}
+
+function scrollInDiv(){
+let myDiv = $('.select-section ul');
+myDiv.animate({scrollTop : 0}, 500);
 }
