@@ -125,6 +125,7 @@ body {
   background-image: url("http://albums.tapuz.co.il/mfhp-webbuilder/5/5/f/5/1420348091.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-position:  0 0, center;
   background-repeat: no-repeat;
   color: rgb(243, 232, 217);
 }
@@ -166,12 +167,6 @@ header {
   justify-content: center;
   height: 50px;
   font-size: 30px;
-}
-
-footer{
-  position: sticky;
-  bottom: 0;
-  background: blue;
 }
 
 .input-section {
