@@ -122,11 +122,12 @@ html {
 /* line 34, ../scss/base/_reset.scss */
 body {
   line-height: 1;
-  background-image: url("http://albums.tapuz.co.il/mfhp-webbuilder/5/5/f/5/1420348091.jpg");
+  background: linear-gradient(45deg, blue, purple);
+ /* background-image: url("http://albums.tapuz.co.il/mfhp-webbuilder/5/5/f/5/1420348091.jpg"); */
   background-size: cover;
   background-attachment: fixed;
   background-position:  0 0, center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; 
   color: rgb(243, 232, 217);
 }
 
