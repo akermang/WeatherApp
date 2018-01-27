@@ -122,12 +122,11 @@ html {
 /* line 34, ../scss/base/_reset.scss */
 body {
   line-height: 1;
-  background: linear-gradient(45deg, blue, purple);
- /* background-image: url("http://albums.tapuz.co.il/mfhp-webbuilder/5/5/f/5/1420348091.jpg"); */
+  background-image: url("http://albums.tapuz.co.il/mfhp-webbuilder/5/5/f/5/1420348091.jpg");
   background-size: cover;
   background-attachment: fixed;
-  background-position:  0 0, center;
-  background-repeat: no-repeat; 
+  background-position: 0 0, center;
+  background-repeat: no-repeat;
   color: rgb(243, 232, 217);
 }
 
@@ -191,25 +190,25 @@ header {
   height: 30px;
 }
 
-.input-section input:focus{
+.input-section input:focus {
   outline: none;
 }
 
 .message,
-.loader{
+.loader {
   width: 50px;
   display: none;
   color: red;
   position: absolute;
   top: 66px;
-  left: calc(28% - 20px)
+  left: calc(28% - 20px);
 }
 
 .select-section {
   margin: 0 auto;
 }
 
-h3.city-name{
+h3.city-name {
   margin: 5px auto;
   text-align: center;
   color: aliceblue;
@@ -258,34 +257,32 @@ h3.city-name{
   height: 30%;
 }
 
-@media (max-width: 1100px){
+@media (max-width: 1100px) {
   .message,
-  .loader{
+  .loader {
     top: 67px;
     left: calc(39.5% - 37px);
   }
 }
 
-@media (max-width: 790px){
-
-  main{
+@media (max-width: 790px) {
+  main {
     width: 85%;
   }
 
   .message,
-  .loader{
+  .loader {
     top: 67px;
     left: calc(50% - 40px);
   }
-  .item-comp-div{
+  .item-comp-div {
     width: 110px;
     margin: 5px;
   }
 }
 
 @media (max-width: 477px) {
-
-  main{
+  main {
     width: 90%;
   }
 
@@ -294,12 +291,11 @@ h3.city-name{
   }
 
   .message,
-  .loader{
+  .loader {
     top: 82px;
   }
 
-  .item-comp-div{
+  .item-comp-div {
     width: 99px;
   }
 }
-
