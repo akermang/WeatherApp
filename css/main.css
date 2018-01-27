@@ -220,7 +220,7 @@ h3.city-name {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
+ }
 
 .item-comp-div,
 .li-item {
@@ -285,6 +285,11 @@ h3.city-name {
 @media (max-width: 477px) {
   main {
     width: 90%;
+  }
+
+  .select-section ul{
+    height: 510px;
+    overflow: auto;
   }
 
   .input-section input {
